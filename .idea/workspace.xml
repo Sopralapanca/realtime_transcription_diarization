@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ac68833-e05b-404f-8006-9e30ac2cabc0" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QcTvyaaMw2lCFmUQkFDbCraq8w" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Programmi/PythonProjects/whisper_real_time&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time" />
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time\test" />
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time\audio_test_files" />
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time\models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time\test" />
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time" />
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time\audio_test_files" />
+      <recent name="E:\Programmi\PythonProjects\whisper_real_time\models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.realtime_transcribe_and_diarization">
+    <configuration name="realtime_transcribe_and_diarization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="whisper_real_time" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/realtime_transcribe_and_diarization.py" />
+      <option name="PARAMETERS" value="--model_path ./models --model medium --max_speakers_number 2 --language it" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="realtime_transcribe_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="whisper_real_time" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/realtime_transcribe_test.py" />
+      <option name="PARAMETERS" value="--model_path ../models --model medium --max_speakers_number 2 --language it" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="transcribe_demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="whisper_real_time" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/transcribe_demo.py" />
+      <option name="PARAMETERS" value="--model medium --non_english" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.realtime_transcribe_and_diarization" />
+      <item itemvalue="Python.realtime_transcribe_test" />
+      <item itemvalue="Python.transcribe_demo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.realtime_transcribe_and_diarization" />
+        <item itemvalue="Python.realtime_transcribe_test" />
+        <item itemvalue="Python.transcribe_demo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ac68833-e05b-404f-8006-9e30ac2cabc0" name="Changes" comment="" />
+      <created>1685652105116</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685652105116</updated>
+      <workItem from="1685652106593" duration="6044000" />
+      <workItem from="1685899928450" duration="266000" />
+      <workItem from="1685900215589" duration="9835000" />
+      <workItem from="1685910476579" duration="7947000" />
+      <workItem from="1686081390899" duration="15966000" />
+      <workItem from="1686171507492" duration="4095000" />
+      <workItem from="1686175664529" duration="639000" />
+      <workItem from="1686335300204" duration="5420000" />
+      <workItem from="1686341483069" duration="931000" />
+      <workItem from="1686422310061" duration="169000" />
+      <workItem from="1686422501525" duration="16083000" />
+      <workItem from="1686779869131" duration="1719000" />
+      <workItem from="1686863751443" duration="6186000" />
+      <workItem from="1686931752091" duration="4537000" />
+      <workItem from="1686937626629" duration="1586000" />
+      <workItem from="1687018919358" duration="5949000" />
+      <workItem from="1687090673815" duration="722000" />
+      <workItem from="1687092106259" duration="1057000" />
+      <workItem from="1687093194711" duration="2925000" />
+      <workItem from="1687096199385" duration="135000" />
+    </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1685920003887</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685920003887</updated>
+    </task>
+    <task id="LOCAL-00002" summary="realtime transcription and diarizarion works">
+      <created>1687024054667</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687024054667</updated>
+    </task>
+    <task id="LOCAL-00003" summary="realtime transcription and diarizarion works">
+      <created>1687024305847</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687024305847</updated>
+    </task>
+    <task id="LOCAL-00004" summary="first commit">
+      <created>1687094024655</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687094024655</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first commit">
+      <created>1687094482809</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687094482809</updated>
+    </task>
+    <task id="LOCAL-00006" summary="first commit">
+      <created>1687095212760</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687095212760</updated>
+    </task>
+    <task id="LOCAL-00007" summary="push in temp">
+      <created>1687095965347</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687095965347</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="realtime transcription and diarizarion works" />
+    <MESSAGE value="first commit" />
+    <MESSAGE value="push in temp" />
+    <option name="LAST_COMMIT_MESSAGE" value="push in temp" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/whisper_real_time$diarize.coverage" NAME="diarize Coverage Results" MODIFIED="1685907634249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/whisperx" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$test_whisper_audiofile.coverage" NAME="test_whisper_audiofile Coverage Results" MODIFIED="1686430704995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$realtime_transcribe_test.coverage" NAME="realtime_transcribe_test Coverage Results" MODIFIED="1687021669477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$realtime_transcribe_and_diarization.coverage" NAME="realtime_transcribe_and_diarization Coverage Results" MODIFIED="1687023685341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$read_jsons.coverage" NAME="read_jsons Coverage Results" MODIFIED="1685919118125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$test_two_speakers_recognition.coverage" NAME="test_two_speakers_recognition Coverage Results" MODIFIED="1685913055914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$transcribe_demo.coverage" NAME="transcribe_demo Coverage Results" MODIFIED="1685901572216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$converting_test.coverage" NAME="converting_test Coverage Results" MODIFIED="1686864566772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$test_two_speakers_recognition2.coverage" NAME="test_two_speakers_recognition2 Coverage Results" MODIFIED="1685917951666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$utility.coverage" NAME="utility Coverage Results" MODIFIED="1686173646293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$test_speaker_verification.coverage" NAME="test_speaker_verification Coverage Results" MODIFIED="1686866965067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/whisper_real_time$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1687019838363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+  </component>
+</project>
