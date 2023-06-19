@@ -238,6 +238,7 @@ def main():
 
     print("Loading pyannote pipeline...")
     config_path = args.model_path + "/config.yaml"
+    #dev = torch.device(device)
     try:
         pipeline = Pipeline.from_pretrained(config_path).to(device)
     except HFValidationError:
