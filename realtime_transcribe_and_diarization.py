@@ -238,6 +238,7 @@ def main():
 
     print("Loading pyannote pipeline...")
     config_path = args.model_path + "/config.yaml"
+    #dev = torch.device(device)
     try:
         pipeline = Pipeline.from_pretrained(config_path).to(device)
     except HFValidationError:
@@ -256,7 +257,7 @@ def main():
         speakers[speaker_name] = (color_list[i % len(color_list)])
 
         # record an audio sample for the speaker and save the audio file
-        audio_seg = record_audio(speaker_name, duration)
+        audio_seg = record_audio(speaker_name, 10)
         audio_embedding = utility.from_audiosegment_to_embedding(speaker_embedding_model, audio_seg)
         speakers_embeddings.append((speaker_name, audio_embedding))
 
