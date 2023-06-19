@@ -34,7 +34,7 @@ def record_audio(filename, duration):
     # Set up the audio stream
     audio_format = pyaudio.paInt16  # 16-bit resolution
     channels = 1  # Mono audio
-    sample_rate = 16000
+    sample_rate = 16000  # Sampling rate (Hz)
 
     p = pyaudio.PyAudio()
 
@@ -109,7 +109,7 @@ def producer(args, pipeline, speakers_samples, speaker_emb_model):
     """
 
     # Define the parameters for recording
-    sample_rate = 16000  # Sample rate in Hz
+    sample_rate = 16000  # Sampling rate in Hz
     duration = args.record_timeout  # Duration of each audio segment in seconds
     chunk_size = int(sample_rate * duration)  # Number of samples in each chunk
 
@@ -256,7 +256,7 @@ def main():
         speakers[speaker_name] = (color_list[i % len(color_list)])
 
         # record an audio sample for the speaker and save the audio file
-        audio_seg = record_audio(speaker_name, duration)
+        audio_seg = record_audio(speaker_name, 10)
         audio_embedding = utility.from_audiosegment_to_embedding(speaker_embedding_model, audio_seg)
         speakers_embeddings.append((speaker_name, audio_embedding))
 
