@@ -227,6 +227,7 @@ def main():
     language = args.language
     if language == "en":
         model += ".en"
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
     max_speakers_number = args.max_speakers_number
     speakers_embeddings = []
