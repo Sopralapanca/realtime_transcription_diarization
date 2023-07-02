@@ -1,14 +1,1 @@
-/audio_test_files/3_people_talking.mp3
-/audio_test_files/4_people_talking.mp3
-/audio_test_files/noisy_conversation.mp3
-/audio_test_files/tests_jfk.flac
-/audio_test_files/two_speakers_test.wav
-/audio_test_files/two_speakers_test_4minutes.mp3
-/audio_test_files/two_speakers_test_4minutes.wav
-/audio_test_files/two_speakers_test_12minutes.mp3
 /models/medium.pt
-/models/large-v2.pt
-/speakers/eliana.wav
-/speakers/eliana2.wav
-/speakers/giacomo.wav
-/speakers/giacomo2.wav
