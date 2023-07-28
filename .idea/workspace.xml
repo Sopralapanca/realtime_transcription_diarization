@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac68833-e05b-404f-8006-9e30ac2cabc0" name="Changes" comment="faster whisper test added">
-      <change afterPath="$PROJECT_DIR$/models/small.pt" afterDir="false" />
+    <list default="true" id="4ac68833-e05b-404f-8006-9e30ac2cabc0" name="Changes" comment="requirements.txt updated">
       <change afterPath="$PROJECT_DIR$/speakers/giacomo2.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test/faster_whisper_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
@@ -241,7 +240,7 @@
       <workItem from="1688154971685" duration="160000" />
       <workItem from="1688155218142" duration="383000" />
       <workItem from="1688196599906" duration="41000" />
-      <workItem from="1690533069031" duration="4497000" />
+      <workItem from="1690533069031" duration="5717000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1685920003887</created>
@@ -307,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690537513300</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="requirements.txt updated">
+      <option name="closed" value="true" />
+      <created>1690537792274</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690537792274</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,13 +323,25 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="realtime transcription and diarizarion works" />
     <MESSAGE value="first commit" />
     <MESSAGE value="push in temp" />
     <MESSAGE value="fix requirements.txt" />
     <MESSAGE value="faster whisper test added" />
-    <option name="LAST_COMMIT_MESSAGE" value="faster whisper test added" />
+    <MESSAGE value="requirements.txt updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="requirements.txt updated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/whisper_real_time$diarize.coverage" NAME="diarize Coverage Results" MODIFIED="1685907634249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/whisperx" />

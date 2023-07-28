@@ -1,4 +1,6 @@
 # https://github.com/guillaumekln/faster-whisper
+# https://github.com/MahmoudAshraf97/whisper-diarization/blob/main/Whisper_Transcription_%2B_NeMo_Diarization.ipynb
+# Nvidia NeMo MSDD
 import whisper
 import torch
 import time
