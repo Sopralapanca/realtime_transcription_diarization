@@ -4,42 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac68833-e05b-404f-8006-9e30ac2cabc0" name="Changes" comment="local commit">
-      <change afterPath="$PROJECT_DIR$/audio_test_files/Three_Minute_Thesis_Matthew_Thompson.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio_test_files/video_3minutes_italian.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio_test_files/youtube_video.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/config_2_dontuse.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/speakers/altro.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/speakers/giacomo.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/speakers/rapone.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/speakers/ravenna.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/speakers/tinti.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temporary_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/whisper_multiple_speakers_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170451_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170502_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170514_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170525_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170536_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170547_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170558_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170609_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170621_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170631_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170642_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170653_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170704_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170715_audio_chunk.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/20230731-170725_audio_chunk.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/whisper_real_time.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/whisper_real_time.iml" afterDir="false" />
+    <list default="true" id="4ac68833-e05b-404f-8006-9e30ac2cabc0" name="Changes" comment="some fix on the model, whisper_multiple_speakers_test.py to test time of transcription and diarization on chunks in tmp directory">
+      <change afterPath="$PROJECT_DIR$/test/client_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/server_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/realtime_transcribe_and_diarization.py" beforeDir="false" afterPath="$PROJECT_DIR$/realtime_transcribe_and_diarization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/speakers/giacomo2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/faster_whisper_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/faster_whisper_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/segments/20230731-170451_audio_chunk_segment0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/whisper_multiple_speakers_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/whisper_multiple_speakers_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,22 +60,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/giaco/PycharmProjects/realtime_transcription_diarization/models&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/giaco/PycharmProjects/realtime_transcription_diarization/models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\giaco\PycharmProjects\realtime_transcription_diarization\models" />
@@ -121,7 +92,29 @@
       <recent name="E:\Programmi\PythonProjects\whisper_real_time\audio_test_files" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.whisper_multiple_speakers_test">
+  <component name="RunManager" selected="Python.client_test">
+    <configuration name="client_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="whisper_real_time" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/client_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="faster_whisper_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="whisper_real_time" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,6 +159,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="server_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="whisper_real_time" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/server_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="temporary_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="whisper_real_time" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -181,28 +196,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporary_test.py" />
       <option name="PARAMETERS" value="--model_path ./models --model medium --max_speakers_number 1 --language it --use_saved_speakers" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_whisper_audiofile" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="whisper_real_time" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test_whisper_audiofile.py" />
-      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -232,36 +225,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_whisper_audiofile.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="whisper_real_time" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_whisper_audiofile.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.realtime_transcribe_and_diarization" />
+      <item itemvalue="Python.client_test" />
+      <item itemvalue="Python.server_test" />
       <item itemvalue="Python.whisper_multiple_speakers_test" />
       <item itemvalue="Python.temporary_test" />
       <item itemvalue="Python.faster_whisper_test" />
-      <item itemvalue="Python.test_whisper_audiofile" />
-      <item itemvalue="Python tests.Python tests in test_whisper_audiofile.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.client_test" />
+        <item itemvalue="Python.server_test" />
         <item itemvalue="Python.whisper_multiple_speakers_test" />
         <item itemvalue="Python.temporary_test" />
         <item itemvalue="Python.faster_whisper_test" />
-        <item itemvalue="Python.test_whisper_audiofile" />
-        <item itemvalue="Python tests.Python tests in test_whisper_audiofile.py" />
       </list>
     </recent_temporary>
   </component>
@@ -303,7 +281,8 @@
       <workItem from="1690786945707" duration="5139000" />
       <workItem from="1690799246705" duration="2354000" />
       <workItem from="1690810011012" duration="7804000" />
-      <workItem from="1690874858336" duration="7612000" />
+      <workItem from="1690874858336" duration="7753000" />
+      <workItem from="1690893435077" duration="8942000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1685920003887</created>
@@ -377,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690537792274</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="some fix on the model, whisper_multiple_speakers_test.py to test time of transcription and diarization on chunks in tmp directory">
+      <option name="closed" value="true" />
+      <created>1690884102075</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690884102076</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,10 +391,12 @@
     <MESSAGE value="fix requirements.txt" />
     <MESSAGE value="faster whisper test added" />
     <MESSAGE value="requirements.txt updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="requirements.txt updated" />
+    <MESSAGE value="some fix on the model, whisper_multiple_speakers_test.py to test time of transcription and diarization on chunks in tmp directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="some fix on the model, whisper_multiple_speakers_test.py to test time of transcription and diarization on chunks in tmp directory" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/whisper_real_time$diarize.coverage" NAME="diarize Coverage Results" MODIFIED="1685907634249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/whisperx" />
+    <SUITE FILE_PATH="coverage/realtime_transcription_diarization$client_test.coverage" NAME="client_test Coverage Results" MODIFIED="1690902316727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/whisper_real_time$test_two_speakers_recognition2.coverage" NAME="test_two_speakers_recognition2 Coverage Results" MODIFIED="1685917951666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/realtime_transcription_diarization$test_whisper_audiofile.coverage" NAME="test_whisper_audiofile Coverage Results" MODIFIED="1690723250455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/realtime_transcription_diarization$realtime_transcribe_and_diarization.coverage" NAME="realtime_transcribe_and_diarization Coverage Results" MODIFIED="1690749243087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -422,6 +411,7 @@
     <SUITE FILE_PATH="coverage/whisper_real_time$converting_test.coverage" NAME="converting_test Coverage Results" MODIFIED="1686864566772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/realtime_transcription_diarization$.coverage" NAME=" Coverage Results" MODIFIED="1690534470743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/whisper_real_time$test_two_speakers_recognition.coverage" NAME="test_two_speakers_recognition Coverage Results" MODIFIED="1685913055914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/realtime_transcription_diarization$server_test.coverage" NAME="server_test Coverage Results" MODIFIED="1690902314171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/whisper_real_time$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1687019838363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/realtime_transcription_diarization$temporary_test.coverage" NAME="temporary_test Coverage Results" MODIFIED="1690815848794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/whisper_real_time$test_speaker_verification.coverage" NAME="test_speaker_verification Coverage Results" MODIFIED="1686866965067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />

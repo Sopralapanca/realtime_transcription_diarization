@@ -78,7 +78,6 @@ if __name__ == "__main__":
     entries = os.listdir("../speakers")
     max_speakers_number = len(entries)
     for i, entry in enumerate(entries):
-        print(entry)
         filepath = "../speakers/"+entry
         audio_seg = AudioSegment.from_wav(filepath)
         speaker_name = entry.split(".")[0]
