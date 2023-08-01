@@ -239,9 +239,9 @@ def main():
 
     print("Loading pyannote pipeline...")
     config_path = args.model_path + "/config.yaml"
-    #dev = torch.device(device)
+    dev = torch.device(device)
     try:
-        pipeline = Pipeline.from_pretrained(config_path).to(device)
+        pipeline = Pipeline.from_pretrained(config_path).to(dev)
     except HFValidationError:
         print("The config file may be not valid. Please check segmentation path and try again.")
         exit(1)

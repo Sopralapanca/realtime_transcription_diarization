@@ -97,7 +97,7 @@ def assign_speaker(model, speakers_samples, audio_segment):
     embedding = from_audiosegment_to_embedding(model, audio_segment)
 
     # Calculate the distance between the embedding of the audio segment and the embedding of each speaker, return the speaker with the minimum distance
-    min_distance = 1
+    min_distance = 100
     speaker_name = None
     for speaker in speakers_samples:
         distance = cdist(speaker[1], embedding, metric="cosine")
@@ -133,6 +133,11 @@ def fuze_segments_and_audiofiles(diarization, audio_segment, speakers_samples, s
                 # Extract the corresponding portion of audio
                 speaker_audio = audio_segment[segment_start:segment_end]
 
+                duration_seconds = len(speaker_audio) / 1000  # Convert milliseconds to seconds
+
+                if duration_seconds < 0.7:
+                    continue
+
                 # Detect the speaker name
                 speaker_name = assign_speaker(speaker_emb_model, speakers_samples, audio_segment)
 
@@ -150,10 +155,13 @@ def fuze_segments_and_audiofiles(diarization, audio_segment, speakers_samples, s
         # Extract the corresponding portion of audio
         speaker_audio = audio_segment[segment_start:segment_end]
 
-        # Detect the speaker name
-        speaker_name = assign_speaker(speaker_emb_model, speakers_samples, audio_segment)
+        duration_seconds = len(speaker_audio) / 1000  # Convert milliseconds to seconds
 
-        audio_segments.append([speaker_name, speaker_audio])
+        if duration_seconds > 0.7:
+            # Detect the speaker name
+            speaker_name = assign_speaker(speaker_emb_model, speakers_samples, audio_segment)
+
+            audio_segments.append([speaker_name, speaker_audio])
 
     return audio_segments
 

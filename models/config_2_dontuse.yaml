@@ -1,0 +1,18 @@
+pipeline:
+  name: pyannote.audio.pipelines.SpeakerDiarization
+  params:
+    clustering: AgglomerativeClustering
+    embedding: speechbrain/spkrec-ecapa-voxceleb
+    embedding_batch_size: 32
+    embedding_exclude_overlap: true
+    segmentation: ../models/pyannote_segmentation_model.bin # Path to the segmentation model
+    segmentation_batch_size: 32
+
+params:
+  clustering:
+    method: centroid # is the linkage used by the agglomerative clustering step. centroid has been found to be slightly better than average.
+    min_cluster_size: 15 # controls what to do with small speaker clusters. Clusters smaller than that are assigned to the most similar large cluster. 15 is a good default value.
+    threshold: 0.7153814381597874 #(gamma in the report, between 0 and 2) controls the number of speakers (i.e. a higher value will result in less speakers).
+  segmentation:
+    min_duration_off: 0.5817029604921046 #(delta in the report, in seconds) controls whether intra-speaker pauses are filled. This usually depends on the downstream application so it is better to first force it to zero (i.e. never fill intra-speaker pauses) during optimization.
+    threshold: 0.4442333667381752 # (theta in the technical report, between 0 and 1) controls the aggressiveness of speaker activity detection (i.e. a higher value will result in less detected speech); default 0.4442333667381752
