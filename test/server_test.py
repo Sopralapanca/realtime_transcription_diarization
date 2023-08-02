@@ -1,6 +1,7 @@
 import socket
 import torch
 import os
+import io
 import json
 import struct
 from pydub import AudioSegment
@@ -41,25 +42,27 @@ def receive_audio_data(conn, audio_model, language):
         if not audio_data:
             break
 
-        audio_segment = reconstruct_audio_segment(audio_data)
+        audio_stream = io.BytesIO(audio_data)
+        audio_segment = AudioSegment.from_raw(audio_stream, frame_rate=16000, sample_width=2, channels=1)  # Adjust parameters according to your AudioSegment configuration
 
-        #audio_tensor = utility.pydub_to_np(audio_segment)
-        #start_time = time.time()
-        #result = audio_model.transcribe(audio=audio_tensor, language=language, fp16=torch.cuda.is_available())
-        #end_time = (time.time() - start_time)
-        #duration_seconds = len(audio_segment) / 1000  # Convert milliseconds to seconds
-        #text = result['text'].strip()
+        audio_tensor = utility.pydub_to_np(audio_segment)
+        start_time = time.time()
+        result = audio_model.transcribe(audio=audio_tensor, language=language, fp16=torch.cuda.is_available())
+        end_time = (time.time() - start_time)
+        duration_seconds = len(audio_segment) / 1000  # Convert milliseconds to seconds
+        text = result['text'].strip()
 
         response_dict = {
             "response": "ok",
-            "segment_duration": 1,
-            "transcription_time": 2,
-            "text": 3
+            "segment_duration": duration_seconds,
+            "transcription_time": end_time,
+            "text": text
         }
 
-        conn.send(json.dumps(response_dict).encode())
-        audio_count += 1
+        response = json.dumps(response_dict).encode()
+        conn.send(response+ b'\n')
 
+        audio_count += 1
 
 def main():
     model_path = "../models"

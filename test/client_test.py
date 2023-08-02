@@ -46,10 +46,17 @@ def compute_diarization(pipeline, audio_chunk_path, audio_seg, max_speakers_numb
 def receive_all_data(conn, chunk_size=1024):
     data = b""
     while True:
-        chunk = conn.recv(chunk_size)
-        if not chunk:
+        try:
+            chunk = conn.recv(chunk_size)
+            if not chunk:
+                break
+            data += chunk
+            if b"\n" in chunk:  # Use a delimiter to separate responses
+                break
+        except EOFError:
+            print("EOFError")
             break
-        data += chunk
+
     return data
 
 
@@ -112,7 +119,7 @@ def main():
             speaker = elem[0]
             segment = elem[1]
             segment_path = "../segments/" + chunk_name + "_segment" + str(pos) + ".wav"
-            print("sending ", segment_path)
+
             # segment.export(segment_path, format="wav")
 
             # if last_speaker != speaker:
@@ -123,16 +130,15 @@ def main():
 
             audio_data = segment.raw_data
             audio_size = len(audio_data)
-            print("audio_size", audio_size)
+
             header = struct.pack('I', audio_size)  # Pack the chunk size as a 4-byte integer
             client_socket.sendall(header + audio_data)
 
             # The client should now receive the server's response
             response = receive_all_data(client_socket, chunk_size=1024)
+
             response_dict = json.loads(response.decode())
-            print("Text:", response_dict["text"])
-            print("Segment Duration (seconds):", response_dict["segment_duration"])
-            print("Transcription Time:", response_dict["transcription_time"])
+            print(f"Text: {response_dict['text']} --- duration {response_dict['segment_duration']} transcription {response_dict['transcription_time']}")
 
             # full_transcription.append(color + text + Style.RESET_ALL)
             # print(color + text + Style.RESET_ALL)
