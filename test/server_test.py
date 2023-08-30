@@ -6,12 +6,16 @@ import json
 import struct
 from pydub import AudioSegment
 import whisper
-import utils.utility as utility
+
+import sys
+sys.path.append("../utils")
+import utility
+
 import time
 
 # Server configuration
-HOST = '127.0.0.1'  # Listen on all available interfaces (public IP)
-PORT = 12345
+HOST = '0.0.0.0'  # Listen on all available interfaces (public IP)
+PORT = 8080
 
 
 def reconstruct_audio_segment(audio_data):

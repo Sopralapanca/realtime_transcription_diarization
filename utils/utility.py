@@ -217,4 +217,22 @@ def test_pipeline():
     audio_segments, segments = fuze_segments_and_audiofiles(diarization, audio_segment=audio_seg)
     transcribe_segments(audio_segments, segments, device=device)
 
+
+
+def compute_diarization(pipeline, audio_chunk_path, audio_seg, max_speakers_number, speakers_samples,
+                        speaker_emb_model):
+    """
+    Compute speaker diarization on the given audio chunk and return the resulting segments.
+    :param pipeline: pipeline used to compute speaker diarization
+    :param audio_chunk_path: path of the audio chunk to process
+    :param audio_seg: AudioSegment object of the audio chunk to process
+    :param args: arguments passed to the program via command line
+    :param speakers_samples: dictionary containing the pre-recorded embedding of each speaker
+    :param speaker_emb_model: model used to compute the embedding of the speakers
+    :return: audio segments for each speaker as list of tuples (speaker name, audio segment)
+    """
+    diarization = pipeline(audio_chunk_path, max_speakers=max_speakers_number)
+    audio_segments = fuze_segments_and_audiofiles(diarization, audio_seg, speakers_samples, speaker_emb_model)
+    return audio_segments
+
 # test_pipeline()

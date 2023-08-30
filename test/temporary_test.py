@@ -317,7 +317,7 @@ if __name__ == "__main__":
 
     saved_speakers = args.use_saved_speakers
     if saved_speakers:
-        entries = os.listdir("./speakers")
+        entries = os.listdir("../speakers")
         max_speakers_number = len(entries)
         for i, entry in enumerate(entries):
             filepath = "./speakers/"+entry

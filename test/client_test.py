@@ -3,7 +3,9 @@ import json
 from huggingface_hub.utils import HFValidationError
 from pyannote.audio.pipelines.speaker_verification import PretrainedSpeakerEmbedding
 from pydub import AudioSegment
-import utils.utility as utility
+import sys
+sys.path.append("../utils")
+import utility
 import pyaudio
 import torch
 from pyannote.audio import Pipeline
@@ -14,7 +16,7 @@ from colorama import Fore, Style
 import time
 
 # Server configuration
-HOST = '127.0.0.1'
+HOST = '172.17.0.1'
 PORT = 12345
 CHUNK_SIZE = 1024
 FORMAT = pyaudio.paInt16
@@ -80,7 +82,7 @@ def main():
     config_path = "../models/config_2_dontuse.yaml"
 
     try:
-        pipeline = Pipeline.from_pretrained(config_path).to(dev)
+        pipeline = Pipeline.from_pretrained(config_path)
     except HFValidationError:
         print(f"The config file in {config_path} may be not valid. Please check segmentation path and try again.")
         exit(1)
