@@ -1,7 +1,7 @@
 import socket
 import json
 from pydub import AudioSegment
-import sys
+import time
 
 import pyaudio
 import os
@@ -13,7 +13,8 @@ import pickle
 from threading import Thread
 
 # Server configuration
-HOST = 'dbalboni.cc'
+#HOST = 'dbalboni.cc'
+HOST = "127.0.0.1"
 
 CHUNK_SIZE = 1024
 FORMAT = pyaudio.paInt16
@@ -33,7 +34,9 @@ def speaker_segment_sender(client_socket, speaker_name, audio_seg):
     message = {
         "type": "STORE_SPEAKER",
         "speaker_name": speaker_name,
-        "data": audio_seg.raw_data
+        "data": audio_seg.raw_data,
+        "sampling_rate": audio_seg.frame_rate,
+        "frame_width" :  audio_seg.frame_width
     }
     data = pickle.dumps(message)
 
@@ -45,6 +48,25 @@ def speaker_segment_sender(client_socket, speaker_name, audio_seg):
     response = pickle.loads(response)
     print("response: ", response)
     return response
+
+def send_audio_chunk(client_socket, audio_seg):
+    """
+    Send the given audio segment to the server and return the response.
+    :param speaker_name: name of the speaker
+    :param audio_seg: AudioSegment object of the audio chunk to send
+    :return: response from the server
+    """
+    message = {
+        "type": "DAT",
+        "data": audio_seg.raw_data,
+        "sampling_rate": audio_seg.frame_rate,
+        "frame_width" :  audio_seg.frame_width
+    }
+    data = pickle.dumps(message)
+
+    # send data including the header with the dimension of the object
+    client_socket.sendall(struct.pack('>I', len(data)) + data)
+
 
 
 def receive_all_data(conn):
@@ -85,12 +107,13 @@ def establish_connection(remote_server_ip, port):
 
 
 def receive_message(client_socket, speakers):
-    response = receive_all_data(client_socket)
-    response_dict = json.loads(response.decode())
-    color = speakers[response_dict["speaker_name"]]
-    text = response_dict["text"]
-    print(f"--- duration {response_dict['segment_duration']} transcription {response_dict['transcription_time']}")
-    print(color + text + Style.RESET_ALL)
+    while True:
+        response = receive_all_data(client_socket)
+        response_dict = pickle.loads(response)
+        color = speakers[response_dict["speaker_name"]]
+        text = response_dict["text"]
+        print(f"--- duration {response_dict['segment_duration']} transcription {response_dict['transcription_time']}")
+        print(color + text + Style.RESET_ALL)
 
 
 def main():
@@ -119,14 +142,12 @@ def main():
     for entry in os.listdir("./tmp"):
         filepath = "./tmp/" + entry
         audio_seg = AudioSegment.from_wav(filepath)
-
-        audio_data = audio_seg.raw_data
-        audio_size = len(audio_data)
-
-        header = struct.pack('I', audio_size)  # Pack the chunk size as a 4-byte integer
         print("sending audio chunk", entry)
-        client_socket.sendall(header + audio_data)
+        send_audio_chunk(client_socket, audio_seg)
+        time.sleep(10)
 
+
+    receive_message_thread.join()
     client_socket.close()
 
 

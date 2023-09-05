@@ -8,29 +8,35 @@ from pydub import AudioSegment
 import whisper
 import time
 import sys
+from threading import Thread
 from pyannote.audio import Pipeline
 from huggingface_hub.utils import HFValidationError
 from pyannote.audio.pipelines.speaker_verification import PretrainedSpeakerEmbedding
 import pickle
+import queue
 
 sys.path.append("./utils")
 import utility
 
 # Server configuration
 HOST = '0.0.0.0'  # Listen on all available interfaces (public IP)
-PORT = 8080
+PORT = 13284
+
+
+# App configuration
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 dev = torch.device(DEVICE)
 MODEL_PATH = "./models"
 MODEL_SIZE = "medium"
 LANG = "it"
-
+MAX_SPEAKERS_NUMBER = 2
 speakers_embeddings = []
 
+shared_queue = queue.Queue(maxsize=10)  # Max size of the queue
 
-def reconstruct_audio_segment(audio_data, frame_rate=44100, sample_width=2, channels=1):
+def reconstruct_audio_segment(audio_data, frame_rate=44100, frame_width=2, channels=1):
     audio_stream = io.BytesIO(audio_data)
-    audio_segment = AudioSegment.from_raw(audio_stream, frame_rate=frame_rate, sample_width=sample_width,
+    audio_segment = AudioSegment.from_raw(audio_stream, frame_rate=frame_rate, sample_width=frame_width,
                                           channels=channels)  # Adjust parameters according to your AudioSegment configuration
     return audio_segment
 
@@ -59,8 +65,8 @@ def receive_data(conn):
     return data
 
 
-def handle_store_speaker(speaker_name, data, speaker_embedding_model):
-    audio_segment = reconstruct_audio_segment(data)
+def handle_store_speaker(speaker_name, message_data, sampling_rate, frame_width, speaker_embedding_model):
+    audio_segment = reconstruct_audio_segment(message_data, frame_rate=sampling_rate, frame_width=frame_width, channels=1)
     audio_segment.export(f"./server_speakers/{speaker_name}.wav", format="wav")
 
     audio_embedding = utility.from_audiosegment_to_embedding(speaker_embedding_model, audio_segment)
@@ -70,7 +76,11 @@ def handle_store_speaker(speaker_name, data, speaker_embedding_model):
 
 
 def handle_DAT(audio_model, LANG, pipeline, speaker_embedding_model, data, max_speakers_number, speakers_embeddings):
-    audio_segment = reconstruct_audio_segment(data)
+    message_data = data["data"]
+    sampling_rate = data["sampling_rate"]
+    frame_width = data["frame_width"]
+
+    audio_segment = reconstruct_audio_segment(message_data, frame_rate=sampling_rate, frame_width=frame_width)
     # get time to store file with name+timestamp
     timestamp = time.time()
     audio_chunk_path = f"./server_chunks/chunk-{timestamp}.wav"
@@ -101,7 +111,31 @@ def handle_DAT(audio_model, LANG, pipeline, speaker_embedding_model, data, max_s
 
         return response_dict
 
-def handle_client_connection(conn, audio_model, LANG, pipeline, speaker_embedding_model):
+
+def dat_thread_function(audio_model, LANG, pipeline, speaker_embedding_model,
+               max_speakers_number, speakers_embeddings):
+    while True:
+        item = shared_queue.get()
+        if item is None:
+            break
+
+        data = item["data"]
+        client = item["client"]
+
+        response = handle_DAT(audio_model, LANG, pipeline, speaker_embedding_model, data, max_speakers_number,
+                              speakers_embeddings)
+
+        if response is not None:
+            # Serialize and send the response back to the client
+            response_data = pickle.dumps(response)
+            response_header = struct.pack('>I', len(response_data))
+
+            client.sendall(response_header + response_data)
+
+        shared_queue.task_done()
+
+
+def handle_client_connection(conn, speaker_embedding_model):
     while True:
         print("Waiting for data...")
         data = receive_data(conn)
@@ -110,12 +144,15 @@ def handle_client_connection(conn, audio_model, LANG, pipeline, speaker_embeddin
 
         data = pickle.loads(data)
         message_type = data["type"]
-        message_data = data["data"]
 
         if message_type == "STORE_SPEAKER":
             speaker_name = data["speaker_name"]
+            message_data = data["data"]
+            sampling_rate = data["sampling_rate"]
+            frame_width = data["frame_width"]
             print("storing speaker: " + speaker_name)
-            handle_store_speaker(speaker_name, message_data, speaker_embedding_model)
+
+            handle_store_speaker(speaker_name, message_data, sampling_rate, frame_width, speaker_embedding_model)
             response_message = {
                 "status": "SUCCESS",
                 "message": "Audio segment stored successfully."
@@ -124,18 +161,19 @@ def handle_client_connection(conn, audio_model, LANG, pipeline, speaker_embeddin
             # Serialize and send the response back to the client
             response_data = pickle.dumps(response_message)
             response_header = struct.pack('>I', len(response_data))
+
             conn.sendall(response_header + response_data)
+
         # if message_type == "LOAD_SPEAKERS":
         #    speaker_names = message_data["speaker_name"]
         #    r = handle_store_speaker(speaker_name, data, speaker_embedding_model)
 
-        if message_data == "DAT":
-            max_speakers_number = len(speakers_embeddings)
-            print("max speakers number: " + str(max_speakers_number))
-            response = handle_DAT(audio_model, LANG, pipeline, speaker_embedding_model, data, max_speakers_number, speakers_embeddings)
+        if message_type == "DAT":
+            global MAX_SPEAKERS_NUMBER
+            MAX_SPEAKERS_NUMBER = len(speakers_embeddings)
+            print("max speakers number: " + str(MAX_SPEAKERS_NUMBER))
+            shared_queue.put({"client":conn, "data":data})
 
-            response = json.dumps(response).encode()
-            conn.send(response + b'\n')
 
 def main():
     print("Loading pyannote pipeline...")
@@ -156,6 +194,12 @@ def main():
     audio_model = whisper.load_model(MODEL_SIZE, download_root=MODEL_PATH,
                                      device=DEVICE)
 
+
+    # Thread that gets message from a shared queue then compute diarization, transcription and sends the message to the client
+    dat_thread = Thread(target=dat_thread_function, args=(audio_model, LANG, pipeline, speaker_embedding_model,
+               MAX_SPEAKERS_NUMBER, speakers_embeddings))
+    dat_thread.start()
+
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((HOST, PORT))
     server_socket.listen(1)
@@ -164,7 +208,7 @@ def main():
     conn, addr = server_socket.accept()
     print(f"Connected by {addr}")
 
-    handle_client_connection(conn, audio_model, LANG, pipeline, speaker_embedding_model)
+    handle_client_connection(conn, speaker_embedding_model)
 
     conn.close()
 

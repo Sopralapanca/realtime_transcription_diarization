@@ -16,7 +16,7 @@ from colorama import Fore, Style
 import time
 
 # Server configuration
-HOST = '172.17.0.1'
+HOST = '127.0.0.1'
 PORT = 12345
 CHUNK_SIZE = 1024
 FORMAT = pyaudio.paInt16
